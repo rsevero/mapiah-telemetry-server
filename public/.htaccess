@@ -10,13 +10,3 @@ RewriteRule ^v1/telemetry$         v1/telemetry.php          [L]
 
 # Block direct access to .php files (use clean URLs only)
 RewriteRule \.php$ - [F,L]
-
-# Protect admin with HTTP Basic Auth
-<IfModule mod_authn_file.c>
-  <Location /admin>
-    AuthType Basic
-    AuthName "Mapiah Telemetry Admin"
-    AuthUserFile /home/YOUR_USER/api.mapiah.org/public/admin/.htpasswd
-    Require valid-user
-  </Location>
-</IfModule>

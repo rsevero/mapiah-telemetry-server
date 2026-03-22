@@ -21,7 +21,7 @@ cd ~/api.mapiah.org
 git clone https://github.com/rsevero/mapiah-telemetry-server.git .
 
 # 1. Replace YOUR_USER with your actual Hostinger username throughout
-sed -i 's|YOUR_USER|'"$USER"'|g' public/.htaccess
+sed -i 's|YOUR_USER|'"$USER"'|g' public/admin/.htaccess
 
 # 2. Create the database
 mysql -u root -p -e "CREATE DATABASE mapiah_telemetry CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
@@ -44,7 +44,7 @@ htpasswd -c -B public/admin/.htpasswd admin
 
 ```bash
 git pull
-sed -i 's|YOUR_USER|'"$USER"'|g' public/.htaccess
+sed -i 's|YOUR_USER|'"$USER"'|g' public/admin/.htaccess
 # Re-run schema/schema.sql only if there are schema changes (uses IF NOT EXISTS — safe to re-run).
 ```
 

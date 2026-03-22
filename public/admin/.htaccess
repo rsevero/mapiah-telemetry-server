@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Mapiah Telemetry Admin"
+AuthUserFile /home/YOUR_USER/api.mapiah.org/public/admin/.htpasswd
+Require valid-user
