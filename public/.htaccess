@@ -4,9 +4,9 @@ RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Route clean URLs to PHP files
-RewriteRule ^v1/telemetry/opt-in$  v1/telemetry-opt-in.php  [L]
-RewriteRule ^v1/telemetry/opt-out$ v1/telemetry-opt-out.php [L]
-RewriteRule ^v1/telemetry$         v1/telemetry.php          [L]
+RewriteRule ^v1/telemetry/opt-in$  v1/telemetry-opt-in.php  [END]
+RewriteRule ^v1/telemetry/opt-out$ v1/telemetry-opt-out.php [END]
+RewriteRule ^v1/telemetry$         v1/telemetry.php          [END]
 
 # Block direct access to .php files (use clean URLs only)
 RewriteRule \.php$ - [F,L]
