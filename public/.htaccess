@@ -16,7 +16,7 @@ RewriteRule \.php$ - [F,L]
   <Location /admin>
     AuthType Basic
     AuthName "Mapiah Telemetry Admin"
-    AuthUserFile /path/to/public/admin/.htpasswd
+    AuthUserFile /home/YOUR_USER/api.mapiah.org/public/admin/.htpasswd
     Require valid-user
   </Location>
 </IfModule>
