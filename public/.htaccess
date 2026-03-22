@@ -1,0 +1,22 @@
+# Force HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Route clean URLs to PHP files
+RewriteRule ^v1/telemetry/opt-in$  v1/telemetry-opt-in.php  [L]
+RewriteRule ^v1/telemetry/opt-out$ v1/telemetry-opt-out.php [L]
+RewriteRule ^v1/telemetry$         v1/telemetry.php          [L]
+
+# Block direct access to .php files (use clean URLs only)
+RewriteRule \.php$ - [F,L]
+
+# Protect admin with HTTP Basic Auth
+<IfModule mod_authn_file.c>
+  <Location /admin>
+    AuthType Basic
+    AuthName "Mapiah Telemetry Admin"
+    AuthUserFile /path/to/public/admin/.htpasswd
+    Require valid-user
+  </Location>
+</IfModule>

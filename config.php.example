@@ -1,0 +1,14 @@
+<?php
+// SPDX-License-Identifier: GPL-3.0-or-later
+// Copyright (C) 2023- Mapiah Ltda
+//
+// Copy this file to config.php and fill in your values.
+// config.php is gitignored — never commit credentials.
+
+return [
+    'db_host'     => 'localhost',
+    'db_name'     => 'mapiah_telemetry',
+    'db_user'     => 'YOUR_DB_USER',
+    'db_password' => 'YOUR_DB_PASSWORD',
+    'db_charset'  => 'utf8mb4',
+];
